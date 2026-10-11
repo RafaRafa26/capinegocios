@@ -1,21 +1,23 @@
-// Curadoria da home. A ordem define a hierarquia: um destaque grande, poucos médios.
+// Curadoria da home (feed do blog). A ordem define a hierarquia:
+// um banner principal, 2 a 4 médios e o restante em grade, do mais recente ao mais antigo.
 
-export interface Destaque {
-  /** Slug de um guia ou artigo. */
-  conteudo: string;
-  /** Link relacionado logo abaixo do destaque, geralmente a ferramenta do tema. */
-  satelite?: string;
-}
+/** Link relacionado logo abaixo do banner principal: uma ferramenta ou outro guia/artigo. */
+export type Satelite = { tipo: "ferramenta"; slug: string } | { tipo: "conteudo"; slug: string };
 
-export const destaquePrincipal: Destaque = {
+/** Banner principal (slug de um guia ou artigo). */
+export const bannerPrincipal = {
   conteudo: "salario-minimo-2026-o-que-muda",
-  satelite: "calculadora-de-custo-do-funcionario",
+  satelites: [
+    { tipo: "ferramenta", slug: "calculadora-de-custo-do-funcionario" },
+    { tipo: "conteudo", slug: "o-que-entra-no-custo-de-um-funcionario" },
+  ] as Satelite[],
 };
 
-export const destaquesSecundarios: Destaque[] = [
-  { conteudo: "como-calcular-ferias", satelite: "calculadora-de-ferias" },
-  { conteudo: "juros-em-alta-capital-de-giro", satelite: "calculadora-de-juros" },
-  { conteudo: "como-calcular-margem-de-lucro", satelite: "calculadora-de-margem" },
+/** Banners médios (2 a 4). */
+export const bannersMedios: string[] = [
+  "juros-em-alta-capital-de-giro",
+  "nota-promissoria-ainda-vale",
+  "ponto-de-equilibrio-o-que-e",
 ];
 
 /** Ferramentas mais usadas, em ordem. Sem analytics ainda: lista editorial. */

@@ -68,9 +68,9 @@ export function ArtigoTemplate({ conteudo }: { conteudo: Conteudo }) {
             <h2 id="sidebar-titulo" className="secao__titulo">
               Ferramentas do tema
             </h2>
-            <div className="lista">
+            <div className="lista-ferramentas">
               {ferramentas.map((f) => (
-                <CardFerramenta key={f.slug} ferramenta={f} />
+                <CardFerramenta key={f.slug} ferramenta={f} variante="linha" />
               ))}
             </div>
           </aside>
@@ -84,7 +84,7 @@ export function ArtigoTemplate({ conteudo }: { conteudo: Conteudo }) {
           </h2>
           <div className="grade">
             {relacionados.map((c) => (
-              <CardConteudo key={c.slug} conteudo={c} tamanho="medio" />
+              <CardConteudo key={c.slug} conteudo={c} tamanho="medio" visual="topo" />
             ))}
           </div>
         </section>

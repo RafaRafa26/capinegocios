@@ -1,42 +1,70 @@
 /*
- * Tokens de design centralizados.
- * A identidade visual ainda não foi definida: estes valores são neutros e
- * devem ser trocados aqui, sem mexer nos componentes.
+ * Tokens de design centralizados. Identidade Capi Negócios: azul claro + branco.
+ * Componentes usam apenas estas variáveis: para ajustar a marca, mude aqui.
  */
 :root {
-  /* Cores */
+  /* Marca (azul claro). Contrastes conferidos para texto branco/sobre branco (WCAG AA). */
+  --cor-marca: #0a74c2; /* fundo do header e botões: branco por cima = 4.9:1 */
+  --cor-marca-hover: #085f9f;
+  --cor-marca-viva: #36a6f2; /* só decorativo: barras, ícones, detalhes */
+  --cor-marca-texto: #0369a1; /* links e chapéus sobre branco ou azul bem claro */
+  --cor-marca-fundo: #eaf6fe; /* faixas e seções de fundo azul */
+  --cor-marca-suave: #cdebfc; /* bordas e tiles sobre fundo azul */
+  --cor-marca-contraste: #ffffff;
+  --cor-marca-profunda: #0c2d48; /* texto escuro com tom azulado e rodapé */
+
+  /* Neutros */
   --cor-fundo: #ffffff;
-  --cor-fundo-suave: #f5f6f7;
+  --cor-fundo-suave: #f4f8fb;
   --cor-superficie: #ffffff;
-  --cor-borda: #e2e4e7;
-  --cor-borda-forte: #c9cdd2;
-  --cor-texto: #1c1f23;
-  --cor-texto-suave: #5b626b;
-  --cor-destaque: #1f4f8a;
-  --cor-destaque-hover: #163a66;
-  --cor-destaque-contraste: #ffffff;
-  --cor-destaque-fundo: #eef3f9;
-  --cor-chapeu: #1f4f8a;
-  --cor-aviso-fundo: #fdf8ec;
-  --cor-aviso-borda: #e9d9a6;
-  --cor-foco: #1f4f8a;
+  --cor-borda: #e1e9f0;
+  --cor-borda-forte: #c3d3e0;
+  --cor-texto: #0f2233;
+  --cor-texto-suave: #4f6475;
+
+  /* Papéis (apontam para a marca) */
+  --cor-destaque: var(--cor-marca);
+  --cor-destaque-hover: var(--cor-marca-hover);
+  --cor-destaque-contraste: var(--cor-marca-contraste);
+  --cor-destaque-fundo: var(--cor-marca-fundo);
+  --cor-link: var(--cor-marca-texto);
+  --cor-chapeu: var(--cor-marca-texto);
+  --cor-foco: #f5a524;
+  --cor-aviso-fundo: #fff8e8;
+  --cor-aviso-borda: #f1d9a0;
   --cor-whatsapp: #1a7f45;
+  --cor-whatsapp-hover: #146636;
+
+  /* Ilustração por categoria: fundo do tile e cor do traço do ícone */
+  --cat-trabalhistas-fundo: #dff0fd;
+  --cat-trabalhistas-traco: #0a74c2;
+  --cat-documentos-fundo: #dcf5f3;
+  --cat-documentos-traco: #0f7c74;
+  --cat-financeiras-fundo: #e5ebfd;
+  --cat-financeiras-traco: #3156c4;
+  --cat-utilitarios-fundo: #e2f6fd;
+  --cat-utilitarios-traco: #087199;
 
   /* Tipografia */
   --fonte-base: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --fonte-titulo: var(--fonte-base);
+  --fonte-titulo: "Inter Tight", "Segoe UI Variable Display", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --fonte-numero: ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
   --texto-xs: 0.75rem;
   --texto-sm: 0.875rem;
   --texto-md: 1rem;
   --texto-lg: 1.125rem;
-  --texto-xl: 1.375rem;
-  --texto-2xl: 1.75rem;
-  --texto-3xl: 2.25rem;
+  --texto-xl: 1.3125rem;
+  --texto-2xl: 1.625rem;
+  --texto-3xl: 2rem;
+  --texto-manchete: 1.875rem;
   --peso-normal: 400;
   --peso-medio: 600;
   --peso-forte: 700;
+  --peso-titulo: 800;
   --altura-linha: 1.6;
-  --altura-linha-titulo: 1.25;
+  --altura-linha-titulo: 1.2;
+  --espacamento-titulo: -0.015em;
+  --espacamento-rotulo: 0.07em;
 
   /* Espaçamento */
   --espaco-1: 0.25rem;
@@ -52,15 +80,25 @@
   --largura-site: 1200px;
   --largura-leitura: 700px;
   --largura-sidebar: 300px;
-  --altura-header: 64px;
-  --raio: 8px;
-  --raio-sm: 4px;
-  --sombra: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --altura-header: 60px;
+  --raio: 12px;
+  --raio-sm: 6px;
+  --raio-pilula: 999px;
+  --barra-secao: 5px;
+  --sombra: 0 1px 2px rgba(12, 45, 72, 0.06), 0 2px 8px rgba(12, 45, 72, 0.05);
+  --sombra-forte: 0 6px 20px rgba(12, 45, 72, 0.12);
 }
 
 @media (min-width: 768px) {
   :root {
-    --texto-2xl: 2rem;
-    --texto-3xl: 2.75rem;
+    --texto-2xl: 1.875rem;
+    --texto-3xl: 2.5rem;
+    --texto-manchete: 2.5rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  :root {
+    --texto-manchete: 2.875rem;
   }
 }

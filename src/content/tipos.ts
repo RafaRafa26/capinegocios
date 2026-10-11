@@ -15,9 +15,13 @@ export interface Pergunta {
   resposta: string;
 }
 
+/** Define o selo, o ícone e o verbo do botão de cada ferramenta. */
+export type TipoFerramenta = "calculadora" | "documento" | "sorteio" | "gerador";
+
 export interface Ferramenta {
   slug: string;
   categoria: CategoriaSlug;
+  tipo: TipoFerramenta;
   nome: string;
   /** Frase única exibida abaixo do título e nos cards. */
   resumo: string;
