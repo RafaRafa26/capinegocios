@@ -1,0 +1,66 @@
+/*
+ * Tokens de design centralizados.
+ * A identidade visual ainda não foi definida: estes valores são neutros e
+ * devem ser trocados aqui, sem mexer nos componentes.
+ */
+:root {
+  /* Cores */
+  --cor-fundo: #ffffff;
+  --cor-fundo-suave: #f5f6f7;
+  --cor-superficie: #ffffff;
+  --cor-borda: #e2e4e7;
+  --cor-borda-forte: #c9cdd2;
+  --cor-texto: #1c1f23;
+  --cor-texto-suave: #5b626b;
+  --cor-destaque: #1f4f8a;
+  --cor-destaque-hover: #163a66;
+  --cor-destaque-contraste: #ffffff;
+  --cor-destaque-fundo: #eef3f9;
+  --cor-chapeu: #1f4f8a;
+  --cor-aviso-fundo: #fdf8ec;
+  --cor-aviso-borda: #e9d9a6;
+  --cor-foco: #1f4f8a;
+  --cor-whatsapp: #1a7f45;
+
+  /* Tipografia */
+  --fonte-base: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fonte-titulo: var(--fonte-base);
+  --texto-xs: 0.75rem;
+  --texto-sm: 0.875rem;
+  --texto-md: 1rem;
+  --texto-lg: 1.125rem;
+  --texto-xl: 1.375rem;
+  --texto-2xl: 1.75rem;
+  --texto-3xl: 2.25rem;
+  --peso-normal: 400;
+  --peso-medio: 600;
+  --peso-forte: 700;
+  --altura-linha: 1.6;
+  --altura-linha-titulo: 1.25;
+
+  /* Espaçamento */
+  --espaco-1: 0.25rem;
+  --espaco-2: 0.5rem;
+  --espaco-3: 0.75rem;
+  --espaco-4: 1rem;
+  --espaco-5: 1.5rem;
+  --espaco-6: 2rem;
+  --espaco-7: 3rem;
+  --espaco-8: 4rem;
+
+  /* Layout */
+  --largura-site: 1200px;
+  --largura-leitura: 700px;
+  --largura-sidebar: 300px;
+  --altura-header: 64px;
+  --raio: 8px;
+  --raio-sm: 4px;
+  --sombra: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --texto-2xl: 2rem;
+    --texto-3xl: 2.75rem;
+  }
+}
