@@ -53,18 +53,33 @@ O diferencial do site é a ligação de mão dupla entre ferramentas e conteúdo
 
 ## Templates
 
-O site inteiro é construído com 4 templates.
+O site inteiro é construído com 4 templates, mais o header comum e a página de listagem `/ferramentas`.
 
-### 1. Home
+### Header (todas as páginas)
 
-De cima para baixo:
+Header fixo na cor da marca: logo → menu com dois itens, **"Início"** e **"Ferramentas"** → busca.
 
-1. Header fixo: logo, menu de categorias, destaque "Ferramentas", busca
-2. Destaque principal + 2 a 4 secundários. Cada destaque pode ter um "satélite" logo abaixo (link relacionado, geralmente a ferramenta do tema)
-3. Ferramentas mais usadas (lista numerada)
-4. Novidades (feed misto de artigos e ferramentas novas)
-5. Um bloco por categoria, cada um terminando com "Ver mais em [categoria]"
-6. Rodapé como mapa do site
+- "Início" fica ativo na home; "Ferramentas" fica ativo em `/ferramentas` e em todas as páginas de ferramenta (`/ferramentas/...`).
+- Categorias de ferramentas, Guias e Artigos **não** aparecem no header: o acesso a eles é pela home, pela página `/ferramentas` e pelo rodapé.
+- Sem faixa de indicadores.
+
+### 1. Home (blog)
+
+A home é o **feed de guias e artigos**, majoritariamente em **banners**: card com o visual da categoria (ilustração, não foto), chapéu, título e linha fina. De cima para baixo:
+
+1. Header
+2. Banner principal grande. Pode ter "satélites" logo abaixo (links relacionados, geralmente a ferramenta do tema)
+3. 2 a 4 banners médios
+4. Bloco discreto de ferramentas: "Ferramentas mais usadas" (lista numerada) + link "Ver todas as ferramentas". Fica na lateral no desktop e em formato compacto, depois dos banners médios, no celular
+5. Faixa horizontal de newsletter / canal do WhatsApp
+6. O restante do feed em grade de banners menores, do mais recente ao mais antigo
+7. Rodapé como mapa do site
+
+Ferramentas têm peso menor na home: não há blocos por categoria de ferramenta. A curadoria (banner principal, médios, satélites e mais usadas) fica em `src/content/home.ts`.
+
+### Página /ferramentas
+
+Lista com **todas as ferramentas agrupadas por categoria** (Trabalhistas, Documentos, Financeiras, Utilitários), com atalhos para cada grupo no topo. Cada item tem ícone, nome, descrição curta, selo do tipo e botão de ação (Calcular, Gerar ou Sortear). Cada grupo termina com link para a página da categoria.
 
 ### 2. Categoria / Hub "Tudo sobre"
 
@@ -84,8 +99,8 @@ Na ordem: breadcrumb → título + 1 frase → **ferramenta acima da dobra** →
 
 ## Padrões visuais obrigatórios
 
-- **Chapéu** (rótulo pequeno da categoria) acima do título em todo card e em toda página de conteúdo.
-- Hierarquia clara de destaques na home: um grande, poucos médios, o resto em lista.
+- **Chapéu** (rótulo pequeno da categoria) acima do título em todo card e em toda página de conteúdo, exceto dentro de uma seção ou grupo da própria categoria, onde seria redundante.
+- Hierarquia clara de destaques na home: um banner grande, 2 a 4 médios, o resto em grade.
 - Listas "mais usadas" sempre numeradas.
 - **Mobile-first.** Evitar carrosséis: no celular, o conteúdo fica em lista vertical.
 - Visual limpo, sem a poluição dos portais. Poucas categorias, muito espaço em branco.

@@ -8,8 +8,8 @@ import { Icone } from "./Icone";
 
 interface Props {
   ferramenta: Ferramenta;
-  /** `destaque`: faixa da home. `padrao`: grades. `linha`: lista compacta. */
-  variante?: "destaque" | "padrao" | "linha";
+  /** `padrao`: grades. `linha`: lista compacta. `item`: linha com descrição curta (página /ferramentas). */
+  variante?: "padrao" | "linha" | "item";
   /** Desligar dentro da seção da própria categoria, onde o chapéu seria redundante. */
   chapeu?: boolean;
   nivel?: "h2" | "h3";
@@ -23,15 +23,16 @@ export function CardFerramenta({ ferramenta, variante = "padrao", chapeu = true,
   const tipo = tiposFerramenta[ferramenta.tipo];
   const href = urlFerramenta(ferramenta);
 
-  if (variante === "linha") {
+  if (variante === "linha" || variante === "item") {
     return (
-      <article className={`ferramenta-card ferramenta-card--linha ferramenta-card--${ferramenta.tipo}`}>
+      <article className={`ferramenta-card ferramenta-card--linha ferramenta-card--${variante} ferramenta-card--${ferramenta.tipo}`}>
         <span className="ferramenta-card__icone">
           <Icone nome={tipo.icone} tamanho={22} />
         </span>
         <div className="ferramenta-card__texto">
           <span className="selo">{tipo.selo}</span>
           <Titulo className="ferramenta-card__nome">{ferramenta.nome}</Titulo>
+          {variante === "item" && <p className="ferramenta-card__resumo">{ferramenta.resumo}</p>}
         </div>
         <Link href={href} className="ferramenta-card__acao">
           {tipo.acao}
@@ -46,7 +47,7 @@ export function CardFerramenta({ ferramenta, variante = "padrao", chapeu = true,
     <article className={`ferramenta-card ferramenta-card--${variante} ferramenta-card--${ferramenta.tipo}`}>
       <div className="ferramenta-card__topo">
         <span className="ferramenta-card__icone">
-          <Icone nome={tipo.icone} tamanho={variante === "destaque" ? 36 : 28} />
+          <Icone nome={tipo.icone} tamanho={28} />
         </span>
         <span className="selo">{tipo.selo}</span>
       </div>
