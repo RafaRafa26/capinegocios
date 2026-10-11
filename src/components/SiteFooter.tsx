@@ -2,16 +2,29 @@ import Link from "next/link";
 import { site } from "@/config/site";
 import { getCategorias, getFerramentasDaCategoria, getTemas } from "@/lib/dados";
 import { urlCategoria, urlFerramenta, urlTema } from "@/lib/urls";
+import { Icone } from "./Icone";
 
 /** Rodapé como mapa do site. */
 export function SiteFooter() {
   return (
     <footer className="rodape">
       <div className="container">
+        <div className="rodape__marca">
+          <Link href="/" className="logo logo--rodape">
+            <span className="logo__marca" aria-hidden="true">
+              C
+            </span>
+            <span className="logo__nome">
+              Capi<span>Negócios</span>
+            </span>
+          </Link>
+          <p>{site.descricao}</p>
+        </div>
         <div className="rodape__mapa">
           {getCategorias().map((c) => (
             <section key={c.slug} aria-labelledby={`rodape-${c.slug}`}>
               <h2 id={`rodape-${c.slug}`}>
+                <Icone nome={c.slug} tamanho={18} />
                 <Link href={urlCategoria(c.slug)}>{c.nome}</Link>
               </h2>
               <ul>

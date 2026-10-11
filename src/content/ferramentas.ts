@@ -13,6 +13,7 @@ export const ferramentas: Ferramenta[] = [
   {
     slug: "calculadora-de-salario-liquido",
     categoria: "trabalhistas",
+    tipo: "calculadora",
     nome: "Calculadora de salário líquido",
     resumo: "Descubra quanto sobra do salário depois dos descontos de INSS e IRRF.",
     variante: "completa",
@@ -41,6 +42,7 @@ export const ferramentas: Ferramenta[] = [
   {
     slug: "calculadora-de-ferias",
     categoria: "trabalhistas",
+    tipo: "calculadora",
     nome: "Calculadora de férias",
     resumo: "Calcule o valor das férias com o terço constitucional e os descontos.",
     variante: "completa",
@@ -69,6 +71,7 @@ export const ferramentas: Ferramenta[] = [
   {
     slug: "calculadora-de-decimo-terceiro",
     categoria: "trabalhistas",
+    tipo: "calculadora",
     nome: "Calculadora de 13º salário",
     resumo: "Veja o valor da primeira e da segunda parcela do 13º salário.",
     variante: "completa",
@@ -91,6 +94,7 @@ export const ferramentas: Ferramenta[] = [
   {
     slug: "calculadora-de-horas-extras",
     categoria: "trabalhistas",
+    tipo: "calculadora",
     nome: "Calculadora de horas extras",
     resumo: "Calcule o valor das horas extras com o adicional correto.",
     variante: "completa",
@@ -111,6 +115,7 @@ export const ferramentas: Ferramenta[] = [
   {
     slug: "calculadora-de-custo-do-funcionario",
     categoria: "trabalhistas",
+    tipo: "calculadora",
     nome: "Calculadora de custo do funcionário",
     resumo: "Descubra quanto um funcionário custa por mês, além do salário.",
     variante: "completa",
@@ -135,6 +140,7 @@ export const ferramentas: Ferramenta[] = [
   {
     slug: "gerador-de-recibo",
     categoria: "documentos",
+    tipo: "documento",
     nome: "Gerador de recibo",
     resumo: "Preencha os dados e baixe um recibo em PDF pronto para assinar.",
     variante: "completa",
@@ -161,6 +167,7 @@ export const ferramentas: Ferramenta[] = [
   {
     slug: "gerador-de-nota-promissoria",
     categoria: "documentos",
+    tipo: "documento",
     nome: "Gerador de nota promissória",
     resumo: "Monte uma nota promissória preenchida e baixe em PDF.",
     variante: "completa",
@@ -181,6 +188,7 @@ export const ferramentas: Ferramenta[] = [
   {
     slug: "gerador-de-orcamento",
     categoria: "documentos",
+    tipo: "documento",
     nome: "Gerador de orçamento",
     resumo: "Crie um orçamento com itens, valores e validade, e envie em PDF.",
     variante: "completa",
@@ -203,6 +211,7 @@ export const ferramentas: Ferramenta[] = [
   {
     slug: "calculadora-de-juros",
     categoria: "financeiras",
+    tipo: "calculadora",
     nome: "Calculadora de juros",
     resumo: "Simule juros simples e compostos de um empréstimo ou aplicação.",
     variante: "completa",
@@ -223,6 +232,7 @@ export const ferramentas: Ferramenta[] = [
   {
     slug: "calculadora-de-margem",
     categoria: "financeiras",
+    tipo: "calculadora",
     nome: "Calculadora de margem",
     resumo: "Descubra a margem de lucro de um produto ou o preço para atingir a margem desejada.",
     variante: "completa",
@@ -249,6 +259,7 @@ export const ferramentas: Ferramenta[] = [
   {
     slug: "calculadora-de-ponto-de-equilibrio",
     categoria: "financeiras",
+    tipo: "calculadora",
     nome: "Calculadora de ponto de equilíbrio",
     resumo: "Saiba quanto precisa vender por mês para pagar todas as contas.",
     variante: "completa",
@@ -272,6 +283,7 @@ export const ferramentas: Ferramenta[] = [
   {
     slug: "sorteio-online",
     categoria: "utilitarios",
+    tipo: "sorteio",
     nome: "Sorteio online",
     resumo: "Sorteie nomes de uma lista para promoções e brindes.",
     variante: "leve",
@@ -288,6 +300,7 @@ export const ferramentas: Ferramenta[] = [
   {
     slug: "gerador-de-numeros-aleatorios",
     categoria: "utilitarios",
+    tipo: "gerador",
     nome: "Gerador de números aleatórios",
     resumo: "Gere números aleatórios dentro de um intervalo, com ou sem repetição.",
     variante: "leve",

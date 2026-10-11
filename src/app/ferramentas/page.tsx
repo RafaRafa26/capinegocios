@@ -31,7 +31,7 @@ export default function FerramentasPage() {
         >
           <div className="grade">
             {getFerramentasDaCategoria(c.slug).map((f) => (
-              <CardFerramenta key={f.slug} ferramenta={f} />
+              <CardFerramenta key={f.slug} ferramenta={f} chapeu={false} />
             ))}
           </div>
         </Secao>

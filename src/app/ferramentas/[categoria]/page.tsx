@@ -46,6 +46,8 @@ export default async function CategoriaPage({ params }: Props) {
       ferramentas={getFerramentasDaCategoria(categoria.slug)}
       conteudos={getConteudosDaCategoria(categoria.slug)}
       relacionados={relacionados}
+      categoria={categoria.slug}
+      ilustracao={categoria.slug}
     />
   );
 }

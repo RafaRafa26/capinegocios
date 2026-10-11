@@ -1,8 +1,7 @@
 import Link from "next/link";
 import type { Ferramenta } from "@/content/tipos";
-import { getCategoria } from "@/lib/dados";
+import { tiposFerramenta } from "@/lib/ferramentas";
 import { urlFerramenta } from "@/lib/urls";
-import { Chapeu } from "./Chapeu";
 
 /** Lista "mais usadas": sempre numerada. */
 export function ListaNumerada({ ferramentas }: { ferramentas: Ferramenta[] }) {
@@ -11,7 +10,7 @@ export function ListaNumerada({ ferramentas }: { ferramentas: Ferramenta[] }) {
       {ferramentas.map((f) => (
         <li key={f.slug}>
           <div>
-            <Chapeu>{getCategoria(f.categoria)?.nome}</Chapeu>
+            <span className="selo">{tiposFerramenta[f.tipo].selo}</span>
             <Link href={urlFerramenta(f)} className="lista-numerada__titulo">
               {f.nome}
             </Link>
